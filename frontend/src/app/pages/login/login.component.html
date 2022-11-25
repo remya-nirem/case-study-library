@@ -1,0 +1,35 @@
+<div class="container pt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <header class="card-header">
+                    <h4 class="card-title mt-2">Login</h4>
+                </header>
+                <article class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="form-row pb-1">
+                            <div class="col form-group">
+                                <label>Email </label>
+                                <input type="email" class="form-control" formControlName="email" >
+                            </div> <!-- form-group end.// -->
+                        </div> <!-- form-row end.// -->
+                        <div class="form-group pb-1">
+                            <label>Password</label>
+                            <input type="password" class="form-control" formControlName="password">
+                        </div> <!-- form-group end.// -->
+                        <div class="form-group pb-2">
+                            <button type="submit" class="btn btn-dark btn-block" [disabled]="!loginForm.valid"> Submit </button>
+                        </div> <!-- form-group// -->
+                        <div class="form-group pb-2">
+                            <small><p name="message" formControlName="message" class="text-danger" [innerHTML]="message"></p></small>
+                        </div>
+                    </form>
+                </article> <!-- card-body end .// -->
+                <div class="border-top card-body text-center">Don't have an account? <a routerLink="../signup" class="badge bg-secondary text-decoration-none link-light">Sign Up</a></div>
+            </div> <!-- card.// -->
+        </div> <!-- col.//-->
+
+    </div> <!-- row.//-->
+</div>
+<!--container end.//-->
+    

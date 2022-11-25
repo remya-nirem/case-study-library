@@ -1,0 +1,52 @@
+<app-headernav></app-headernav>
+<div class="container pt-3 h-50">
+    <h3>Edit Book</h3>
+    <form [formGroup]="bookform" (ngSubmit)="sendBook()">
+        <input type="hidden" formControlName="_id">
+        <div class="mb-3">
+          <label for="bookid" class="form-label">Book ID</label>
+          <input type="text" class="form-control" id="bookid" formControlName="bookid">
+        </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" formControlName="title">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" formControlName="description" rows="4"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="author" class="form-label">Author</label>
+          <input type="text" class="form-control" id="author" formControlName="author">
+        </div>
+        <div class="mb-3">
+            <label for="publisher" class="form-label">Publisher</label>
+            <input type="text" class="form-control" id="publisher" formControlName="publisher">
+        </div>
+        <div class="mb-3">
+            <label for="pages" class="form-label">Pages</label>
+            <input type="number" class="form-control" id="pages" formControlName="pages">
+        </div>
+        <div class="mb-3">
+            <label for="genre" class="form-label">Genre</label>
+            <select id="genre" class="form-control" formControlName="genre">
+                <option>Biography</option>
+                <option>Drama</option>
+                <option>Fiction</option>
+                <option>History</option>
+                <option>Thriller</option>
+                <option>Poetry</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select id="status" class="form-control" formControlName="status">
+                <option>Available</option>
+                <option>Due</option>
+                <option>Not Available</option>                
+            </select>
+        </div>        
+        <button type="submit" class="btn btn-dark mb-3" [disabled]="!bookform.valid">Submit</button>
+      </form>
+</div> 
+<app-footer></app-footer>

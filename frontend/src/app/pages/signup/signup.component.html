@@ -1,0 +1,64 @@
+<div class="container pt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <header class="card-header">
+                    <h4 class="card-title mt-2">Sign up</h4>
+                </header>
+                <article class="card-body">
+                    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                        <div class="form-row pb-1">
+                            <div class="col form-group">
+                                <label>Name </label>
+                                <input type="text" class="form-control" formControlName="name">
+                            </div> <!-- form-group end.// -->
+                        </div> <!-- form-row end.// -->
+                        <div class="form-group pb-1">
+                            <label>Email address</label>
+                            <input type="email" class="form-control" formControlName="email">
+                        </div> <!-- form-group end.// -->
+                        <div class="form-group pb-1">
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" formControlName="gender" value="male">
+                                <span class="form-check-label"> Male </span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" formControlName="gender" value="female">
+                                <span class="form-check-label"> Female</span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" formControlName="gender" value="other">
+                                <span class="form-check-label"> Other</span>
+                            </label>
+                        </div> <!-- form-group end.// -->
+                        <div class="form-row pb-1">
+                            <div class="form-group col-md-6">
+                                <label>Age</label>
+                                <select id="age" class="form-control" formControlName="age">
+                                    <option>Below 10</option>
+                                    <option>10-30</option>
+                                    <option>31-60</option>
+                                    <option>Aabove 60</option>
+                                </select>
+                            </div> <!-- form-group end.// -->
+                        </div> <!-- form-row.// -->
+                        <div class="form-group pb-2">
+                            <label>Create password</label>
+                            <input class="form-control" type="password" formControlName="password">
+                        </div> <!-- form-group end.// -->
+                        <div class="form-group pb-2">
+                            <button type="submit" class="btn btn-dark btn-block" [disabled]="!signupForm.valid"> Register </button>
+                        </div> <!-- form-group// -->
+                        <div class="form-group pb-2">
+                            <small><p name="message" class="form-control" formControlName="message" class="text-danger" [innerHTML]="message"></p></small>
+                        </div>
+                    </form>
+                </article> <!-- card-body end .// -->
+                <div class="border-top card-body text-center">Have an account? <a routerLink="../login" class="badge bg-secondary text-decoration-none link-light">Log In</a></div>
+            </div> <!-- card.// -->
+        </div> <!-- col.//-->
+
+    </div> <!-- row.//-->
+</div>
+<!--container end.//-->
+    
